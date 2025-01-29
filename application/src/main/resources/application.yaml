@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: taskboard
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+  jpa:
+    open-in-view: false
+logging:
+  file:
+    name: taskboard.log
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+taskboard:
+  username: user
+  password: password
+server:
+  error:
+    include-message: always
+springdoc:
+  api-docs:
+    path: /api/api-docs
+  swagger-ui:
+    path: /api/swagger-ui.html
+management: # https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, env
+  endpoint:
+    env:
+      show-values: when-authorized
+  metrics:
+      enable:
+        all: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+taskboard:
+  username: user
+  password: password
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+taskboard:
+  username: sbaltes
+  password: SM2vIHPXTPrpRsNQjkFRtcflfDNkO2X4
+server:
+  error:
+    whitelabel:
+      enabled: false
+management:
+  endpoint:
+    health:
+      show-details: never

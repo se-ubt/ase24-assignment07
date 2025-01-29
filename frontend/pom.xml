@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.unibayreuth.se</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1</version>
+  </parent>
+
+  <artifactId>frontend</artifactId>
+  <packaging>pom</packaging>
+
+  <properties>
+    <node.version>v22.13.1</node.version>
+    <frontend.plugin.version>1.15.1</frontend.plugin.version>
+  </properties>
+
+
+  <dependencies>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>./src/resources</directory>
+        <filtering>false</filtering> <!-- don't modify files -->
+      </resource>
+      <!-- Add generated frontend as a new resource folder -->
+      <resource>
+        <directory>./dist/frontend/browser</directory>
+        <filtering>false</filtering> <!-- don't modify files -->
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <!-- remove the output dir of the Angular build on mvn clean -->
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>dist</directory>
+              <directory>../application/src/main/resources/static</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>${frontend.plugin.version}</version>
+
+        <!-- see https://github.com/eirslett/frontend-maven-plugin -->
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>${node.version}</nodeVersion>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>install</arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>npm run build</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run build</arguments>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven.plugin.resources.version}</version>
+        <executions>
+          <execution>
+            <id>default-resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>../application/src/main/resources/static</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>io.swagger.codegen.v3</groupId>
+        <artifactId>swagger-codegen-maven-plugin</artifactId>
+        <version>${maven.plugin.swagger.codegen.v3.version}</version>
+        <configuration>
+          <inputSpec>./src-gen/taskboard-api-docs.json</inputSpec>
+          <language>typescript-angular</language>
+          <output>src/taskboard/client/</output>
+          <generateSupportingFiles>false</generateSupportingFiles>
+          <generateApis>false</generateApis>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>
