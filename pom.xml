@@ -56,7 +56,7 @@
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
         <maven.plugin.resources.version>3.3.1</maven.plugin.resources.version>
         <!-- https://mvnrepository.com/artifact/io.swagger.codegen.v3/swagger-codegen-maven-plugin -->
-        <maven.plugin.swagger.codegen.v3.version>3.0.66</maven.plugin.swagger.codegen.v3.version>
+        <maven.plugin.swagger.codegen.v3.version>3.0.68</maven.plugin.swagger.codegen.v3.version>
 
         <!-- Spring Boot -->
         <spring.boot.version>3.3.5</spring.boot.version>
