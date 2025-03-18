@@ -81,7 +81,7 @@
         <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
         <mapstruct.version>1.6.2</mapstruct.version>
         <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
-        <flyway.version>10.20.1</flyway.version>
+        <flyway.version>11.4.0</flyway.version>
         <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
         <springdoc.openapi.version>2.6.0</springdoc.openapi.version>
         <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
