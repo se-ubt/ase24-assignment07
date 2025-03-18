@@ -67,7 +67,7 @@
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
         <hamcrest.version>3.0</hamcrest.version>
         <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-        <mockito.version>5.14.2</mockito.version>
+        <mockito.version>5.16.1</mockito.version>
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <rest-assured.version>5.5.0</rest-assured.version>
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
