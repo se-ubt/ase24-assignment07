@@ -71,7 +71,7 @@
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <rest-assured.version>5.5.0</rest-assured.version>
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
-        <assertj.version>3.27.0</assertj.version>
+        <assertj.version>3.27.3</assertj.version>
 
         <!-- Other tools -->
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
