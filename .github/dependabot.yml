@@ -9,12 +9,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      maven-packages:
+        patterns:
+          - "*"
   - package-ecosystem: "npm"
     directory: "/frontend"
     schedule:
       interval: "weekly"
-groups:
-  version-updates:
-    applies-to: version-updates
-  security-updates:
-    applies-to: security-updates
+    groups:
+      npm-packages:
+        patterns:
+          - "*"
