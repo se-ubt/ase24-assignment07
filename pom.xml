@@ -67,7 +67,7 @@
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
         <hamcrest.version>3.0</hamcrest.version>
         <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-        <mockito.version>5.16.1</mockito.version>
+        <mockito.version>5.17.0</mockito.version>
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <rest-assured.version>5.5.1</rest-assured.version>
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
@@ -81,7 +81,7 @@
         <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
         <mapstruct.version>1.6.3</mapstruct.version>
         <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
-        <flyway.version>11.5.0</flyway.version>
+        <flyway.version>11.6.0</flyway.version>
         <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
         <springdoc.openapi.version>2.8.6</springdoc.openapi.version>
         <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
