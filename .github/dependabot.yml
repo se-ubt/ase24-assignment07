@@ -7,19 +7,19 @@ version: 2
 updates:
   - package-ecosystem: "maven"
     directory: "/"
-    open-pull-requests-limit: 0 # # disable version updates, only allow security updates
+    open-pull-requests-limit: 0  # disable version updates, only allow security updates
     schedule:
       interval: "weekly"
-    groups:
+    groups:  # group updates
       maven-packages:
         patterns:
           - "*"
   - package-ecosystem: "npm"
     directory: "/frontend"
-    open-pull-requests-limit: 0 # # disable version updates, only allow security updates
+    open-pull-requests-limit: 0  # disable version updates, only allow security updates
     schedule:
       interval: "weekly"
-    groups:
+    groups: # group updates
       npm-packages:
         patterns:
           - "*"
